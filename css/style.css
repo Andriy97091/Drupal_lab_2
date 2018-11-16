@@ -1,0 +1,49 @@
+body {
+	background: url("../img/123.jpg") no-repeat;
+	width: 100%;
+}
+input[type='submit'], button, [aria-label]{
+    cursor: pointer;
+}
+#spoiler{
+    display: none;
+}
+#simple-grud {
+	position: absolute;
+	border: 3px solid green;
+	border-radius: 5px;
+	margin-left: 600px;
+	margin-top: 100px;
+	min-width: 300px;
+	min-height: 400px;
+	padding: 25px;
+	background: url("../img/back.jpg");
+}
+#products {
+	position: relative;
+	min-width: 100%;
+	font-size: 20px;
+}
+
+.btn-add, .btn-edit, .btn-delete {
+	width: 80px;
+	height: 21px;
+	background: white;
+	border-radius: 3px;
+	border: 1px solid black;
+}
+.btn-add:hover {
+	background: green;
+	color: white;
+}
+.btn-edit:hover {
+	background: yellow;
+}
+.btn-delete:hover {
+	background: red;
+	color: white;
+}
+.input {
+	border: 2px solid green;
+	border-radius: 3px;
+}
