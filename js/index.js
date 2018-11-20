@@ -2,7 +2,7 @@ let app = new function() {
   this.el = document.getElementsByClassName('products');
   this.products = ['Milk'];
 
-  //Змiна назви i кiлькiсть продуктiв
+  //Change name and count products
   this.Count = data => {
     let el   = document.getElementsByClassName('product');
     let name = 'product';
@@ -55,7 +55,7 @@ let app = new function() {
     document.getElementsByClassName('saveEdit').onsubmit = () => {
       let product = el.value;
       if (product) {
-        this.products.splice(item, 1, product.trim());
+        this.products.splice(item, 1, product);
         this.FetchAll();
         CloseInput();
       }
