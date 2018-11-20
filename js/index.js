@@ -1,28 +1,27 @@
-let app = new function() {
+let app = () => {
   this.el = document.getElementsByClassName('products');
   this.products = ['Milk'];
 
   //Change name and count products
   this.Count = data => {
-    let el   = document.getElementsByClassName('product');
     let name = 'product';
-    if (data) {
-      if (data > 1) {
+    let el = document.getElementsByClassName('product');
+    if (data && data > 1) {
         name = 'products';
-      }
-      el.innerHTML = data + ' ' + name ;
+      	el.innerHTML = `${data}  ${name}` ;
     } else {
-      el.innerHTML = 'No ' + name;
+      el.innerHTML = `No  ${name}`;
     }
   };
   
   //Create 
   this.FetchAll = () => {
     let data = '';
-    if (this.products.length > 0) {
+    let lengthProd = this.products.length;
+    if (lengthProd > 0) {
       for (i = 0; i < this.products.length; i++) {
           data += '<tr>';
-          data += '<td>' + (i+1) + '. ' + this.products[i] + '</td>';
+          data += `<td> + ${i+1} .${this.products[i]} + </td>`;
           data += '<td><button class = "btn-edit" onclick="app.Edit(' + i + ')">Edit</button></td>';
           data += '<td><button class = "btn-delete" onclick="app.Delete(' + i + ')">Delete</button></td>';
           data += '</tr>';       
@@ -38,10 +37,9 @@ let app = new function() {
     let product = el.value;
     if (product) {
         this.products.push(product);
-        console.log(this.products)
         el.value = '';
         this.FetchAll();
-    }else {
+    } else {
       alert('123123');
     }
   };
