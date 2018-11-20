@@ -1,10 +1,10 @@
 let app = new function() {
-  this.el = document.getElementById('products');
+  this.el = document.getElementsByClassName('products');
   this.products = ['Milk'];
 
   //Змiна назви i кiлькiсть продуктiв
   this.Count = data => {
-    let el   = document.getElementById('product');
+    let el   = document.getElementsByClassName('product');
     let name = 'product';
     if (data) {
       if (data > 1) {
@@ -16,7 +16,7 @@ let app = new function() {
     }
   };
   
-  //Створюэмо список наших продуктiв
+  //Create 
   this.FetchAll = () => {
     let data = '';
     if (this.products.length > 0) {
@@ -32,9 +32,9 @@ let app = new function() {
     return this.el.innerHTML = data;
   };
 
-  //Дадоэмо
+  //Add product in list
   this.Add = () => {
-    el = document.getElementById('add-name');
+    el = document.getElementsByClassName('add-name');
     let product = el.value;
     if (product) {
         this.products.push(product);
@@ -46,13 +46,13 @@ let app = new function() {
     }
   };
 
-  //Редагуэм
+  //Edit this product
   this.Edit = item => {
-    let el = document.getElementById('edit-name');
+    let el = document.getElementsByClassName('edit-name');
 
     el.value = this.products[item];
-    document.getElementById('spoiler').style.display = 'block';
-    document.getElementById('saveEdit').onsubmit = () => {
+    document.getElementsByClassName('spoiler').style.display = 'block';
+    document.getElementsByClassName('saveEdit').onsubmit = () => {
       let product = el.value;
       if (product) {
         this.products.splice(item, 1, product.trim());
@@ -62,7 +62,7 @@ let app = new function() {
     }
   };
 
-  //Видаляэмо
+  //Delete this product
   this.Delete = item => {
     this.products.splice(item, 1);
     this.FetchAll();
@@ -72,7 +72,7 @@ let app = new function() {
 
 app.FetchAll();
 
-//Закриваэмо наш редактор продукту
+//Close edit
 function CloseInput() {
-  document.getElementById('spoiler').style.display = 'none';
+  document.getElementsByClassName('spoiler').style.display = 'none';
 }

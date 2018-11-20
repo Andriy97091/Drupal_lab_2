@@ -6,26 +6,26 @@
 	<title>Title</title>
 </head>
 <body>
-	<div id="simple-grud">
+	<div class="simple-grud">
 		<form action="javascript:void(0);" method="POST" onsubmit="app.Add()"> 
-	  		<input type="text" class="input" id="add-name" placeholder="New product">
+	  		<input type="text" class="input add-name" placeholder="New product">
 	  		<input type="submit" value="Add" class="btn-add">
 		</form>
 
 		<div id="spoiler">
 		  	<form action="javascript:void(0);" method="POST" id="saveEdit">
-			    <input class="input" type="text" id="edit-name">
+			    <input class="input edit-name" type="text">
 			    <input type="submit" value="Edit" class="btn-edit"> <a onclick="CloseInput()" aria-label="Close">&#10006;</a>
 		  </form>
 		</div>
 
-		<p id="product"></p>
+		<p class="product"></p>
 
 		<table>
 		  	<tr>
 		    	<th >Name</th>
 		  	</tr>
-		    <tbody id="products">
+		    <tbody class="products">
 		    </tbody>
 		</table>
 	</div>
