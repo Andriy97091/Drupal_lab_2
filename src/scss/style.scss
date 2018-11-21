@@ -1,6 +1,17 @@
 $center: 50px;
+$centerError: center;
+$errorColor: red;
+$linkColor: orange;
 
 .text-center {
 	margin-top: $center;
 	margin-bottom: $center;
+}
+
+.errorText {
+	text-align: $centerError;
+	color: $errorColor;
+}
+.link {
+	color: $linkColor;
 }
