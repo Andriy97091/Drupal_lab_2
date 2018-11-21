@@ -8,10 +8,10 @@ function a() {
 		let url = `https://en.wikipedia.org/w/api.php?action=opensearch&search=${searchTerm}&format=json&callback=?`;
 		$.ajax({
 			type: "GET",
-			url: url,
+			url,
 			async: false,
 			dataType: "json",
-			success : data => {
+			success(data) {
 					$("#output").empty();
 					if(data[1].length !== 0) {
 						for(let i = 0; i < data[1].length; i++){
@@ -23,7 +23,7 @@ function a() {
 						$("#output").prepend("<h1 style = 'color: red; text-align: center;'>Error 404 &#9785<h1>");
 					}	
 			},
-			error : errorMessage => {
+			error(errorMessage) {
 				$("#output").html(errorMessage);
 			}
 		})
